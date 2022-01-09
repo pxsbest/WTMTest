@@ -1,0 +1,16 @@
+﻿@model Gensci_LAM.ViewModel.MajorVMs.MajorVM
+@inject IStringLocalizer<Program> Localizer;
+
+<wt:form vm="@Model">
+<wt:row items-per-row="ItemsPerRowEnum.Two">
+<wt:textbox field="Entity.MajorCode" />
+<wt:textbox field="Entity.MajorName" />
+<wt:textbox field="Entity.Remark" />
+<wt:combobox field="Entity.SchoolMdlId" items="AllSchoolMdls"/>
+<wt:checkbox field="SelectedStudentMajorsIDs" items="AllStudentMajorss"/>
+</wt:row>
+    <wt:row align="AlignEnum.Right">
+        <wt:submitbutton />
+        <wt:closebutton />
+    </wt:row>
+</wt:form>

@@ -1,0 +1,18 @@
+﻿@model Gensci_LAM.ViewModel.StudentVMs.StudentVM
+@inject IStringLocalizer<Program> Localizer;
+
+<wt:form vm="@Model">
+	<wt:quote>@Localizer["Sys.DeleteConfirm"]</wt:quote>
+<wt:row items-per-row="ItemsPerRowEnum.Two">
+<wt:display field="Entity.StudentCode" />
+<wt:display field="Entity.StudentName" />
+<wt:display field="Entity.StudentType" />
+<wt:display field="Entity.Remark" />
+<wt:display field="Entity.PhotoId" />
+</wt:row>
+    <wt:hidden field="Entity.ID" />
+    <wt:row align="AlignEnum.Right">
+        <wt:submitbutton theme=" ButtonThemeEnum.Warm" text="@Localizer["Sys.Delete"]"/>
+        <wt:closebutton />
+    </wt:row>
+</wt:form>

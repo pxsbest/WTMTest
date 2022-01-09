@@ -1,0 +1,11 @@
+﻿@model Gensci_LAM.ViewModel.BookVMs.BookListVM
+@inject IStringLocalizer<Program> Localizer;
+
+<wt:searchpanel vm="@Model" reset-btn="true">
+    <wt:row items-per-row="ItemsPerRowEnum.Three">
+        <wt:textbox field="Searcher.BookName" />
+        <wt:combobox field="Searcher.BookType" empty-text="@Localizer["Sys.All"]" />
+        <wt:textbox field="Searcher.Remark" />
+    </wt:row>
+</wt:searchpanel>
+<wt:grid vm="@Model" url="/Book/Search" />

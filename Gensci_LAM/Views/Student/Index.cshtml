@@ -1,0 +1,11 @@
+﻿@model Gensci_LAM.ViewModel.StudentVMs.StudentListVM
+@inject IStringLocalizer<Program> Localizer;
+
+<wt:searchpanel vm="@Model" reset-btn="true">
+<wt:row items-per-row="ItemsPerRowEnum.Three">
+<wt:textbox field="Searcher.StudentCode" />
+<wt:textbox field="Searcher.StudentName" />
+<wt:combobox field="Searcher.StudentType" empty-text="@Localizer["Sys.All"]" />
+</wt:row>
+</wt:searchpanel>
+<wt:grid vm="@Model" url="/Student/Search"/>
