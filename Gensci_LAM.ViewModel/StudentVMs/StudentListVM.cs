@@ -35,8 +35,16 @@ namespace Gensci_LAM.ViewModel.StudentVMs
             return new List<GridColumn<Student_View>>{
                 this.MakeGridHeader(x => x.StudentCode),
                 this.MakeGridHeader(x => x.StudentName).SetSort().SetFormat((a,b)=>{
-                //string rv=$"<a href='Home/PIndex#/Student/Details/{a.ID}' target='_blank'>{a.StudentName}</a>";
-                string rv=$"<a href='Home/Index#/Student/Details/{a.ID}' target='_blank'>{a.StudentName}</a>";
+                
+                    //1.
+                    //string rv=$"<a href='Home/PIndex#/Student/Details/{a.ID}' target='_blank'>{a.StudentName}</a>";
+                
+                    //2.
+                    //string rv=$"<a href='Home/Index#/Student/Details/{a.ID}' target='_blank'>{a.StudentName}</a>";
+                    
+                    //3.
+                    string rv=UIService.MakeDialogButton(ButtonTypesEnum.Link,$"/Student/Details/{a.ID}",a.StudentName,500,null);
+                    
                     return rv;
                 }),
                 this.MakeGridHeader(x => x.StudentType),

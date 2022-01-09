@@ -28,14 +28,14 @@ namespace Gensci_LAM
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDistributedMemoryCache();
+            services.AddDistributedMemoryCache();// 分布式缓存
+
             services.AddWtmSession(3600, ConfigRoot);
             services.AddWtmCrossDomain(ConfigRoot);
             services.AddWtmAuthentication(ConfigRoot);
             services.AddWtmHttpClient(ConfigRoot);
             services.AddWtmSwagger();
             services.AddWtmMultiLanguages(ConfigRoot);
-
             services.AddMvc(options =>
             {
                 options.UseWtmMvcOptions();
