@@ -12,7 +12,9 @@ namespace Gensci_LAM.ViewModel.StudentMdlVMs
 {
     public partial class StudentMdlVM : BaseCRUDVM<StudentMdl>
     {
+        //页面中的下拉选项,在InitVM中做 初始化
         public List<ComboSelectListItem> AllStudentMajors { get; set; }
+
         [Display(Name = "专业")]
         public List<string> SelectedStudentMajorIDs { get; set; }
 

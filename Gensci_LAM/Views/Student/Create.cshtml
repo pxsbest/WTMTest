@@ -7,6 +7,14 @@
 <wt:textbox field="Entity.StudentName" />
 <wt:combobox field="Entity.StudentType" />
 <wt:textbox field="Entity.Remark" />
+    <wt:selector list-vm="Schools" field="Entity.SchoolId" text-bind="Schools.EntityList[0].SchoolName">
+        <wt:searchpanel>
+            <wt:row items-per-row="ItemsPerRowEnum.Two">
+                <wt:textbox field="Schools.Searcher.SchoolName"/>
+            </wt:row>
+        </wt:searchpanel>
+    </wt:selector>
+
 <wt:upload field="Entity.PhotoId" />
 </wt:row>
     <wt:row align="AlignEnum.Right">

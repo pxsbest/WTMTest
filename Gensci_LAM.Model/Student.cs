@@ -43,6 +43,14 @@ namespace Gensci_LAM.Model
         [Display(Name ="备注")]
         public string Remark { get; set; }
 
+
+
+        public School School { get; set; }
+        public int SchoolId { get; set; }
+
+
+
+
         //附件
         [Display(Name = "照片")]
         public Guid? PhotoId { get; set; }
